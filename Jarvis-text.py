@@ -66,8 +66,11 @@ def save_recipients(filename, recipients):
 def send_message_to_whatsapp():
     recipients = load_recipients("recipients.txt")
 
+    speak("Enter the recipient's name: ")
     recipient_name = input("Enter the recipient's name: ")
+    speak("enter the message you want to send: ")
     message = input("Enter the message you want to send: ")
+    speak("enter time: ")
     scheduled_time = input("Enter the time to send the message (HH:MM): ")
 
     if recipient_name in recipients:
