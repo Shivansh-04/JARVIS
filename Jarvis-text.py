@@ -4,12 +4,18 @@ import pyttsx3
 import datetime
 import openai
 from features import whatsapp
+from features.login_function import logininfo
+import sys
 
 openai.api_key = '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'
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
+engine.setProperty('rate',200)
+engine.setProperty('volume',1.0)
+engine.setProperty('pitch', 150)
+engine.setProperty('timbre', 150)
 
 
 def speak(audio):
@@ -28,7 +34,13 @@ def wishMe():
     speak("i am Jarvis , please tell how can i help you ? ")
 
 if __name__ == "__main__":
+    speak("Enter username ")
+    username = input("Enter username: ")
+    speak("Enter password ")
+    password = input("Enter password: ")
+    logininfo(username, password)
     wishMe()
+
     while True:
     #if 1:
         #query = takeCommand().lower()
