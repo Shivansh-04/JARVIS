@@ -7,8 +7,7 @@ import webbrowser
 import os
 import pywhatkit as kit
 import sys
-import PyPDF2
-import math as operator
+from features.login_function import logininfo
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -46,10 +45,15 @@ def takeCommand():
     except Exception as e:
         #print(e)
         print("Say that again please.......")
-        return "None" 
+        return "None"
     return query
 
 if __name__ == "__main__":
+    speak("Enter username ")
+    username = input("Enter username: ")
+    speak("Enter password ")
+    password = input("Enter password: ")
+    logininfo(username, password)
     wishMe()
     while True:
     #if 1:
@@ -97,50 +101,15 @@ if __name__ == "__main__":
             speak('thanks for using me sir, have a good day...')
             sys.exit()
 
-        #!physics file open karne ke lia
-        elif 'physics' in query:
-            speak('opening physics sir')
-            codePath = "D:\PCM\PHYSICS"
-            os.startfile(codePath)
-
-        #!chemistry file open karne ke lia
-        elif 'open chemistry' in query:
-            speak('opening chemistry sir')
-            codePath = "D:\PCM\CHEMISTRY"
-            os.startfile(codePath)
-
-        #!math file open karne ke lia
-        elif 'open math' in query:
-            speak('opening maths sir')
-            codePath = "D:\PCM\MATHS"
-            os.startfile(codePath)
-
         #!python open karne ke lia
         elif 'open python' in query:
             speak('opening python sir')
             codePath = "C:\Program Files\PyScripter\PyScripter.exe"
             os.startfile(codePath)
 
-        #!ms excel open karne ke lia
-        elif 'open excel' in query:
-            speak('opening excel sir')
-            codePath = "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
-            os.startfile(codePath)
-
-        #!drama file open karne ke lia
-        elif 'open drama' in query:
-            speak('opening dramas sir')
-            codePath = "D:\DRAMA"
-            os.startfile(codePath)
-
         #!whatsapp me message send karne ke lia
-        elif 'send message in whatsapp' in query:
-            speak('Sir, what can i send on whatsapp')
-            command2 = takeCommand().lower()
-            kit.sendwhatmsg("+919140470224",command2,21,54)
+        elif 'message whatsapp' in query:
+            speak("hello, world!")
 
-        #!youtube se video open karne ke lia
-        elif 'play songs on youtube' in query:
-            kit.playonyt("see you again")
 
         speak("sir, do you have any other work")
