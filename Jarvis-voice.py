@@ -57,8 +57,8 @@ if __name__ == "__main__":
     wishMe()
     while True:
     #if 1:
-        query = takeCommand().lower()
         #!logic for executing tasks based on queary
+        query = takeCommand().lower()
         
         #!to search anything on wikipedia
         if 'wikipedia' in query:
@@ -107,9 +107,7 @@ if __name__ == "__main__":
             codePath = "C:\Program Files\PyScripter\PyScripter.exe"
             os.startfile(codePath)
 
-        #!whatsapp me message send karne ke lia
-        elif 'message whatsapp' in query:
-            speak("hello, world!")
+        #! More work to do here
 
 
         speak("sir, do you have any other work")
