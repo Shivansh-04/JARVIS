@@ -69,6 +69,10 @@ if __name__ == "__main__":
             pyautogui.sleep(0.7)
             pyautogui.press('enter')
 
+        elif 'close' in query:
+            pyautogui.hotkey('alt','f4')
+            speak('done sir!')
+
         elif 'no thanks' in query:
             speak('thanks for using me sir, have a good day...')
             sys.exit()
