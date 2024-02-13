@@ -77,6 +77,10 @@ if __name__ == "__main__":
             pyautogui.typewrite(app_name)
             pyautogui.sleep(0.7)
             pyautogui.press('enter')
+
+        elif 'close' in query:
+            pyautogui.hotkey('alt','f4')
+            speak('done sir!')
         
         #!youtube open karne ke lia
         elif 'open youtube' in query:
