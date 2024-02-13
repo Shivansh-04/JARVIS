@@ -53,6 +53,8 @@ if __name__ == "__main__":
             speak(f"Sir, The time is {strTime}")
             print(f"Sir, The time is {strTime}")
 
+
+        #! To search in wikipedia
         elif 'wikipedia' in query:
             speak('Searching wikipedia........')
             query = query.replace("wikipedia","")
@@ -61,6 +63,7 @@ if __name__ == "__main__":
             print(results)
             speak(results)
 
+        #! To open any program/app
         elif 'open' in query:
             app_name = query.replace('open', '')
             speak("opening" + app_name)
@@ -69,10 +72,12 @@ if __name__ == "__main__":
             pyautogui.sleep(0.7)
             pyautogui.press('enter')
 
+        #! To close the window 
         elif 'close' in query:
             pyautogui.hotkey('alt','f4')
             speak('done sir!')
 
+        #! to close the jarvis program 
         elif 'no thanks' in query:
             speak('thanks for using me sir, have a good day...')
             sys.exit()
