@@ -78,6 +78,7 @@ if __name__ == "__main__":
             pyautogui.sleep(0.7)
             pyautogui.press('enter')
 
+        #! To close the window
         elif 'close' in query:
             pyautogui.hotkey('alt','f4')
             speak('done sir!')
