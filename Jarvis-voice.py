@@ -108,9 +108,7 @@ if __name__ == "__main__":
             codePath = "C:\Program Files\PyScripter\PyScripter.exe"
             os.startfile(codePath)
 
-        #!whatsapp me message send karne ke lia
-        elif 'message whatsapp' in query:
-            speak("hello, world!")
+        #! more things to do here
 
 
         speak("sir, do you have any other work")
