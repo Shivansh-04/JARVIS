@@ -8,6 +8,7 @@ import os
 import pywhatkit as kit
 import sys
 from features.login_function import logininfo
+import pyautogui
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -107,9 +108,16 @@ if __name__ == "__main__":
             codePath = "C:\Program Files\PyScripter\PyScripter.exe"
             os.startfile(codePath)
 
-        #!whatsapp me message send karne ke lia
-        elif 'message whatsapp' in query:
-            speak("hello, world!")
+        # #!whatsapp me message send karne ke lia
+        # elif 'message whatsapp' in query:
+        #     speak("hello, world!")
+            
+        elif 'switch tab' in query:
+            pyautogui.hotkey('ctrl','tab')
+
+        elif 'close tab' in query:
+            pyautogui.hotkey('ctrl','w')
+        
 
 
         speak("sir, do you have any other work")
