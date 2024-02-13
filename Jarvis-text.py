@@ -3,7 +3,6 @@
 import pyttsx3
 import datetime
 import openai
-from features import whatsapp
 from features.login_function import logininfo
 import sys
 
@@ -52,19 +51,4 @@ if __name__ == "__main__":
             speak(f"Sir, The time is {strTime}")
             print(f"Sir, The time is {strTime}")
 
-        elif 'send message on WhatsApp' in main:
-            speak("Enter the recipient's name: ")
-            recipient_name = input("Enter the recipient's name: ")
-            speak("enter the message you want to send: ")
-            message = input("Enter the message you want to send: ")
-            speak("enter time: ")
-            scheduled_time = input("Enter the time to send the message (HH:MM): ")
-            whatsapp.send_message_to_whatsapp(recipient_name, message, scheduled_time)
-        
-        elif 'add new contact for whatsapp' in main:
-            recipient_name = input("Enter the recipient's name: ")
-            recipient_number = input("Enter the recipient's phone number (including country code): ")
-            recipients = whatsapp.load_recipients("recipients.txt")
-            recipients[recipient_name] = recipient_number
-            whatsapp.save_recipients("recipients.txt", recipients)
-            print(f"Recipient '{recipient_name}' added successfully.")
+        speak("sir, do you have any other work")
