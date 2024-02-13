@@ -69,6 +69,14 @@ if __name__ == "__main__":
             speak("according to wikipedia")
             print(results)
             speak(results)
+
+        elif 'open' in query:
+            app_name = query.replace('open', '')
+            speak("opening" + app_name)
+            pyautogui.press('super')
+            pyautogui.typewrite(app_name)
+            pyautogui.sleep(0.7)
+            pyautogui.press('enter')
         
         #!youtube open karne ke lia
         elif 'open youtube' in query:

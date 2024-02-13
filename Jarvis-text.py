@@ -3,8 +3,10 @@
 import pyttsx3
 import datetime
 import openai
+import wikipedia
 from features.login_function import logininfo
 import sys
+import pyautogui
 
 openai.api_key = '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'
 
@@ -44,11 +46,31 @@ if __name__ == "__main__":
     #if 1:
         #query = takeCommand().lower()
         #! logic for executing tasks based on queary
-        main=input("enter your command-->")
+        query=input("enter your command-->")
 
-        if 'tell time' in main:
+        if 'tell time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, The time is {strTime}")
             print(f"Sir, The time is {strTime}")
+
+        elif 'wikipedia' in query:
+            speak('Searching wikipedia........')
+            query = query.replace("wikipedia","")
+            results = wikipedia.summary(query, sentences=2)
+            speak("according to wikipedia")
+            print(results)
+            speak(results)
+
+        elif 'open' in query:
+            app_name = query.replace('open', '')
+            speak("opening" + app_name)
+            pyautogui.press('super')
+            pyautogui.typewrite(app_name)
+            pyautogui.sleep(0.7)
+            pyautogui.press('enter')
+
+        elif 'no thanks' in query:
+            speak('thanks for using me sir, have a good day...')
+            sys.exit()
 
         speak("sir, do you have any other work")
